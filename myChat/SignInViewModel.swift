@@ -9,6 +9,7 @@ import Foundation
 
 class SignInViewModel: ObservableObject {
     
+    var name = ""
     var email = ""
     var password = ""
     
