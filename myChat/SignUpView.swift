@@ -39,6 +39,8 @@ struct SignUpView: View {
                 .border(Color(UIColor.separator))
                 .padding()
             
+         
+            
             Button{
                 viewModel.signUp()
             } label: {
@@ -56,7 +58,7 @@ struct SignUpView: View {
                 Text("Não tenho uma conta? Clique aqui")
                     .foregroundColor(.black)
             }
-            
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

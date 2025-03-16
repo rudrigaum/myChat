@@ -12,45 +12,48 @@ struct SignInView: View {
     @StateObject var viewModel = SignInViewModel()
     
     var body: some View {
-        VStack {
-            Image("logo")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 200, height: 200)
-            
-            TextField("Entre com seu e-mail", text: $viewModel.email)
-                .padding()
-                .autocapitalization(.none)
-                .disableAutocorrection(false)
-                .border(Color(UIColor.separator))
-                .padding()
+        NavigationView {
+            VStack {
+                Image("logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200, height: 200)
                 
-            
-            SecureField("Entre com sua senha", text: $viewModel.password)
-                .padding()
-                .autocapitalization(.none)
-                .disableAutocorrection(false)
-                .border(Color(UIColor.separator))
-                .padding()
-            
-            Button{
-                viewModel.signIn()
-            } label: {
-                Text("Entrar")
-                    .frame(maxWidth: 150)
+                TextField("Entre com seu e-mail", text: $viewModel.email)
                     .padding()
-                    .foregroundColor(.white)
-                    .background(Color("BlueColor"))
-                    .cornerRadius(10.0)
-            }
-            
-            Button{
+                    .autocapitalization(.none)
+                    .disableAutocorrection(false)
+                    .border(Color(UIColor.separator))
+                    .padding()
                 
-            } label: {
-                Text("Não tenho uma conta? Clique aqui")
-                    .foregroundColor(.black)
+                
+                SecureField("Entre com sua senha", text: $viewModel.password)
+                    .padding()
+                    .autocapitalization(.none)
+                    .disableAutocorrection(false)
+                    .border(Color(UIColor.separator))
+                    .padding()
+                
+                Button{
+                    viewModel.signIn()
+                } label: {
+                    Text("Entrar")
+                        .frame(maxWidth: 150)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color("BlueColor"))
+                        .cornerRadius(10.0)
+                }
+                
+                NavigationLink(destination: SignUpView(),
+                               label: {
+                    Text("Não tenho uma conta? Clique aqui")
+                        .foregroundColor(.black)
+                    
+                })
             }
-            
+            .navigationTitle("Login")
+            .navigationBarHidden(true)
         }
     }
 }
