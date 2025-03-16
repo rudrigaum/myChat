@@ -44,19 +44,12 @@ struct SignUpView: View {
             Button{
                 viewModel.signUp()
             } label: {
-                Text("Entrar")
+                Text("Cadastrar")
                     .frame(maxWidth: 150)
                     .padding()
                     .foregroundColor(.white)
                     .background(Color("BlueColor"))
                     .cornerRadius(10.0)
-            }
-            
-            Button{
-                
-            } label: {
-                Text("Não tenho uma conta? Clique aqui")
-                    .foregroundColor(.black)
             }
             .navigationBarTitleDisplayMode(.inline)
         }

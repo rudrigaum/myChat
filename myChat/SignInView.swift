@@ -52,8 +52,6 @@ struct SignInView: View {
                     
                 })
             }
-            .navigationTitle("Login")
-            .navigationBarHidden(true)
         }
     }
 }
